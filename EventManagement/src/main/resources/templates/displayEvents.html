@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+			
+			<table align="center" border="0" width=500 cellpadding=0 cellspacing=0>
+				<tr height=150>
+					<td></td>
+				</tr>
+			</table>
+
+			<table align="center" border="1" width=500 cellpadding=0 cellspacing=0>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Date</th>
+				<th colspan="3"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:if="${#lists.isEmpty(eventList)}">
+				<th colspan="3">No Events to Display</th>
+			</tr>
+			<tr th:each="e : ${eventList}">
+				<th><span th:text="${e.event_id}">Id</span></th>
+				<th height=10></th>
+				<th><span th:text="${e.title}">Title</span></th>
+				<th><span th:text="${#dates.format(e.event_date, 'dd-MMM-yyyy')}">Author</span></th>
+				<th><a th:href="@{/editEvent}">Edit</a></th>
+				<th><a th:href="@{/deleteEvent}">Delete</a></th>				
+			</tr>
+		</tbody>	
+	</table>	
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Create New Event</title>
+<link rel="stylesheet" type="text/css"
+	href="../static/bootstrap-4.0.0-dist/css/bootstrap.min.css" />
+<script type="text/javascript"
+	src="../static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<form th:action="@{/createNewEvent}" th:object="${event}" method="get" style="max-width: 600px; margin: 0 auto;">
+		
+		<table align="center" border="0" width=500 cellpadding=0 cellspacing=0>
+			<tr height=150>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><font size="4" color="grey">Create Event</font></td>
+			</tr>
+			<tr>
+				<td height=10></td>
+			</tr>
+			<tr>
+				<td><font size="3" color="grey">Event Name:</font></td>
+				<td><input type="text" th:field="*{title}"></td>
+			</tr>
+			<tr>
+				<td height=10></td>
+			</tr>
+			<tr>
+				<td><font size="3" color="grey">Event Date:</font></td>
+				<td><input type="date" th:field="*{event_date}"></td>
+			</tr>
+			<tr>
+				<td height=10 colspan="2"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><button type="submit" value="Create">Create</button></td>
+			</tr>
+
+		</table>
+
+	</form>
+
+
+
+
+</body>
+</html>
